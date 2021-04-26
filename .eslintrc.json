@@ -1,0 +1,41 @@
+{
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "script"
+    },
+    "rules": {
+        "indent": [
+            "warn",
+            4,
+            {
+                "MemberExpression": 0,
+                "SwitchCase": 1,
+                "VariableDeclarator": 1,
+                "ObjectExpression": 1,
+                "flatTernaryExpressions": false,
+                "ArrayExpression": 1
+            }
+        ],
+        "no-unused-vars": [
+            "warn",
+            {
+                "args": "none"
+            }
+        ],
+        "linebreak-style":[
+            "error",
+            "windows"
+        ],
+        "eol-last": [
+            "error",
+            "always"
+        ],
+        "no-trailing-spaces": "error"
+    }
+}
