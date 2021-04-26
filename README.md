@@ -1,19 +1,19 @@
-# Dumb-DB
+# Donkey-DB
 
 The dumbest db you'll ever see
 
 ## Installation
 
 ```sh
-npm install --save dumb-db
+npm install --save donkey-db
 ```
 
 ## Usage
 
 ```js
-const DumbDB = require('dumb-db');
+const DonkeyDB = require('donkey-db');
 
-const db = new DumbDB('dumb-database'); // can be set to any filename/path (even none)
+const db = new DonkeyDB('donkey-database'); // can be set to any filename/path (even none)
 
 db.save('my money', 0);     // based on a true story
 db.save('my money', 20);    // got money (somehow)
@@ -22,7 +22,7 @@ db.get('my money');         // 20
 
 ## Documentation
 
-### DumbDB Class
+### DonkeyDB Class
 
 #### save
 
@@ -82,15 +82,15 @@ db.path();
 Helper function for generating a path to file (not required)
 
 ```js
-DumbDB.filename(file); // file:string (relative (to cwd) or absolute path to file)
+DonkeyDB.filename(file); // file:string (relative (to cwd) or absolute path to file)
 // returns string (path to file)
-// default: "{cwd}/db.dumb"
+// default: "{cwd}/db.donk"
 ```
 
 #### parseSingle (static)
 
-Parses a dumb string into usable data (not required)
+Parses a donkey string into usable data (not required)
 
 ```js
-DumbDB.parseSingle(data, parse) // data:string, parse:boolean (if true, JSON.parse-s the data)
+DonkeyDB.parseSingle(data, parse) // data:string, parse:boolean (if true, JSON.parse-s the data)
 ```

@@ -1,5 +1,5 @@
 {
-  "name": "dumb-db",
+  "name": "donkey-db",
   "version": "1.0.0",
   "description": "dumbest db you'll ever see",
   "main": "index.js",
@@ -12,7 +12,9 @@
     "url": "git+https://github.com/SpeckyYT/dumb-db.git"
   },
   "keywords": [
-    "dumb",
+    "donkey",
+    "stupid",
+    "plain-text",
     "db",
     "database"
   ],

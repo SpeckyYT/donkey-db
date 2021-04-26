@@ -5,11 +5,11 @@ const SEP = '=';
 const NL = '\0\b\f\r\n';
 const NNL = '\r\n';
 
-class DumbDB {
+class DonkeyDB {
     #filename;
 
     constructor(file){
-        this['#filename'] = DumbDB.filename(file);
+        this['#filename'] = DonkeyDB.filename(file);
 
         if(!fs.existsSync(this.path())){
             fs.writeFileSync(this.path(), '');
@@ -39,10 +39,10 @@ class DumbDB {
         .split(NL)
         .reverse();
         for(const item of db){
-            const parsed = DumbDB.parseSingle(item, false);
+            const parsed = DonkeyDB.parseSingle(item, false);
             if(parsed)
                 if(parsed.key == key)
-                    return DumbDB.parseSingle(item, true).data;
+                    return DonkeyDB.parseSingle(item, true).data;
         }
     }
 
@@ -51,7 +51,7 @@ class DumbDB {
         const db = fs.readFileSync(this.path(), { encoding: 'utf-8' })
         .split(NL);
         for(const item of db){
-            const parsed = DumbDB.parseSingle(item, false);
+            const parsed = DonkeyDB.parseSingle(item, false);
             if(parsed)
                 if(parsed.key == key)
                     return true;
@@ -64,7 +64,7 @@ class DumbDB {
         .split(NL);
         const data = {};
         for(const item of db){
-            const parsed = DumbDB.parseSingle(item, true);
+            const parsed = DonkeyDB.parseSingle(item, true);
             if(parsed) data[parsed.key] = parsed.data;
         }
         return data;
@@ -77,7 +77,7 @@ class DumbDB {
         const newDB = db
         .reverse()
         .filter(full => {
-            const parsed = DumbDB.parseSingle(full, false);
+            const parsed = DonkeyDB.parseSingle(full, false);
             if(!full || !parsed) return false;
             if(currentKeys.includes(parsed.key)) return false;
             return currentKeys.push(parsed.key);
@@ -95,7 +95,7 @@ class DumbDB {
         const dbpath = typeof string == 'string' ? path.parse(string) : {};
         const newPath = path.format({
             name: dbpath.name || 'db',
-            ext: dbpath.ext || '.dumb',
+            ext: dbpath.ext || '.donk',
             dir: dbpath.dir,
             root: dbpath.root,
         });
@@ -118,4 +118,4 @@ class DumbDB {
     }
 }
 
-module.exports = DumbDB;
+module.exports = DonkeyDB;

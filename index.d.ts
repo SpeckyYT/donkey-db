@@ -3,7 +3,7 @@ type parsedData = {
     data:any
 }
 
-export = class DumbDB {
+export = class DonkeyDB {
     constructor(file:string)
     save(key:string, data:any):boolean
     get(key:string):any
