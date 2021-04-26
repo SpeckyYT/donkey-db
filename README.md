@@ -68,6 +68,15 @@ Cleans up the database (less storage usage)
 db.clean();
 ```
 
+#### readDB
+
+Literally reads the DB (not required for usage)
+
+```js
+db.readDB();
+// returns array<string>
+```
+
 #### path
 
 Gives the path to the database file

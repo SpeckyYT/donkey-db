@@ -35,9 +35,7 @@ class DonkeyDB {
 
     get(key){
         if(typeof key != 'string' || !key) return undefined;
-        const db = fs.readFileSync(this.path(), { encoding: 'utf-8' })
-        .split(NL)
-        .reverse();
+        const db = this.readDB().reverse();
         for(const item of db){
             const parsed = DonkeyDB.parseSingle(item, false);
             if(parsed)
@@ -48,8 +46,7 @@ class DonkeyDB {
 
     has(key){
         if(typeof key != 'string' || !key) return undefined;
-        const db = fs.readFileSync(this.path(), { encoding: 'utf-8' })
-        .split(NL);
+        const db = this.readDB();
         for(const item of db){
             const parsed = DonkeyDB.parseSingle(item, false);
             if(parsed)
@@ -60,8 +57,7 @@ class DonkeyDB {
     }
 
     fetch(){
-        const db = fs.readFileSync(this.path(), { encoding: 'utf-8' })
-        .split(NL);
+        const db = this.readDB();
         const data = {};
         for(const item of db){
             const parsed = DonkeyDB.parseSingle(item, true);
@@ -71,8 +67,7 @@ class DonkeyDB {
     }
 
     clean(){
-        const db = fs.readFileSync(this.path(), { encoding: 'utf-8' })
-        .split(NL);
+        const db = this.readDB();
         const currentKeys = [];
         const newDB = db
         .reverse()
@@ -85,6 +80,15 @@ class DonkeyDB {
         .reverse()
         .join(NL) + (currentKeys.length ? NL : '');
         return fs.writeFileSync(this.path(), newDB);
+    }
+
+    readDB(){
+        const data = fs
+        .readFileSync(this.path(), { encoding: 'utf-8' })
+        .split(NL);
+        while(data.length && !data[data.length-1])
+            data.splice(data.length-1, 1);
+        return data;
     }
 
     path(){
