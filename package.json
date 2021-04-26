@@ -1,0 +1,29 @@
+{
+  "name": "dumb-db",
+  "version": "1.0.0",
+  "description": "dumbest db you'll ever see",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpeckyYT/dumb-db.git"
+  },
+  "keywords": [
+    "dumb",
+    "db",
+    "database"
+  ],
+  "author": "SpeckyYT",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/SpeckyYT/dumb-db/issues"
+  },
+  "homepage": "https://github.com/SpeckyYT/dumb-db#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.25.0"
+  }
+}
