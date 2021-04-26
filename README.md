@@ -88,7 +88,7 @@ db.path();
 
 #### filename (static)
 
-Helper function for generating a path to file (not required)
+Helper function for generating a path to file (not required for usage)
 
 ```js
 DonkeyDB.filename(file); // file:string (relative (to cwd) or absolute path to file)
@@ -98,7 +98,7 @@ DonkeyDB.filename(file); // file:string (relative (to cwd) or absolute path to f
 
 #### parseSingle (static)
 
-Parses a donkey string into usable data (not required)
+Parses a donkey string into usable data (not required for usage)
 
 ```js
 DonkeyDB.parseSingle(data, parse) // data:string, parse:boolean (if true, JSON.parse-s the data)
